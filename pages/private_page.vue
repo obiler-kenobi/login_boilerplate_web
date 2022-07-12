@@ -1,5 +1,5 @@
 <template>
-  <div>This is a private page. Welcome {{ $auth.user.full_name }}</div>
+  <div>This is a private page. Welcome {{ $auth.user.email }}</div>
 </template>
 
 <script>
