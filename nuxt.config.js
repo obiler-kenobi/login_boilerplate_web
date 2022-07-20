@@ -59,17 +59,24 @@ export default {
   auth: {
     strategies: {
       local: {
+        scheme: 'refresh',
         token: {
           property: 'access_token',
           global: true,
           required: true,
           type: 'Bearer'
         },
+        refreshToken: {
+          property: 'refresh_token',
+          data: 'refresh_token',
+          maxAge: 60 * 60 * 24 * 30,
+        },
         user: {
           property: false,
         },
         endpoints: {
           login: { url: '/login', method: 'post' },
+          refresh: { url: '/refresh', method: 'post'},
           user: { url: '/user/me', method: 'get' }
         }
       }
