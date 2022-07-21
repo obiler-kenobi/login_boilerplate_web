@@ -22,6 +22,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/axios'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -69,14 +70,14 @@ export default {
         refreshToken: {
           property: 'refresh_token',
           data: 'refresh_token',
-          maxAge: 60 * 60 * 24 * 30,
+          maxAge: 60 * 60 * 24 * 30
         },
         user: {
-          property: false,
+          property: false
         },
         endpoints: {
           login: { url: '/login', method: 'post' },
-          refresh: { url: '/refresh', method: 'post'},
+          refresh: { url: '/refresh', method: 'post', headers: { Authorization: 'Bearer ' } },
           user: { url: '/user/me', method: 'get' }
         }
       }
