@@ -69,15 +69,14 @@ export default {
         },
         refreshToken: {
           property: 'refresh_token',
-          data: 'refresh_token',
-          maxAge: 60 * 60 * 24 * 30
+          data: 'refresh_token'
         },
         user: {
           property: false
         },
         endpoints: {
           login: { url: '/login', method: 'post' },
-          refresh: { url: '/refresh', method: 'post', headers: { Authorization: 'Bearer ' } },
+          refresh: { url: '/refresh', method: 'post'},
           user: { url: '/user/me', method: 'get' }
         }
       }
